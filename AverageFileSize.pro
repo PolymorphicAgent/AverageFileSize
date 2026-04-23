@@ -18,6 +18,9 @@ HEADERS += \
 FORMS += \
     mainwindow.ui
 
+DISTFILES += \
+    README.md
+
 RC_ICONS += favicon.ico
 
 # Default rules for deployment.

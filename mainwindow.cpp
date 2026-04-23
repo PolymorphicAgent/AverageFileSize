@@ -55,7 +55,7 @@ double MainWindow::calculateAverageFileSize(const QString &rootPath, qint64 &tot
     }
 
     QFileInfoList entries = dir.entryInfoList(QDir::Files | QDir::Dirs | QDir::NoDotAndDotDot);
-    for (const QFileInfo &entry : entries) {
+    for (const QFileInfo &entry : std::as_const(entries)) {
         if (entry.isDir()) {
             // Recursive call for subdirectories
             calculateAverageFileSize(entry.absoluteFilePath(), totalSize, fileCount);
